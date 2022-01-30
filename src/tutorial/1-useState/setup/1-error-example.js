@@ -1,7 +1,26 @@
-import React from 'react';
+import React from 'react'
 
 const ErrorExample = () => {
-  return <h2>useState error example</h2>;
-};
+  let title = 'Random Title'
 
-export default ErrorExample;
+// If you want to change the title like below thwn you cant
+// because we are not re-rendering it.
+// this is done in part 2 - useState-basics.js
+
+  const handleClick = () => {
+    console.log(title)
+    title = 'Hello People'
+    console.log(title)
+  }
+
+  return (
+    <React.Fragment>
+      <h2>{title}</h2>
+      <button type='button' className='btn' onClick={handleClick}>
+        Change Title
+      </button>
+    </React.Fragment>
+  )
+}
+
+export default ErrorExample
